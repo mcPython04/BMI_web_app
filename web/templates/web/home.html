@@ -7,11 +7,22 @@
 <body>
     <h1>Welcome to the BMI Calculator Page!</h1>
     <p> Please enter the required information: </p>
-    <form method="post">
+    <form action="result" method="post">
+        {% csrf_token %}
+
         Height:
         <input type="text" placeholder="feet" name="feet">
         <input type="text" placeholder="inches" name="inches">
+
+        <p></p>
+
+        Weight:
+        <input type="text" placeholder="weight" name="weight">
+
+        <p></p>
+
         <input type="submit" value="Submit">
+
     </form>
 </body>
 </html>
