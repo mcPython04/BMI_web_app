@@ -8,3 +8,6 @@ python: # => 3
 
 install:
   - pip install django
+
+script:
+  - python manage.py test
