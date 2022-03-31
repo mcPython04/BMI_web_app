@@ -14,13 +14,27 @@ def result(request):
         inch = request.POST["inches"]
         weight = request.POST["weight"]
 
-        bmi = round(calculation.calculate_bmi(int(feet), int(inch), int(weight)), 2)
+        bmi = round(calculation.calculate_bmi(int(feet), int(inch), int(weight)), 1)
+        flag = ""
+
+        if bmi < 18.5:
+            flag = "Underweight"
+
+        elif bmi >= 18.5 and bmi < 25:
+            flag = "Normal Weight"
+
+        elif bmi >= 25.0 and bmi < 30:
+            flag = "Overweight"
+
+        elif bmi >= 30:
+            flag = "Obese"
 
         context = {
             'feet': feet,
             'inch': inch,
             'weight': weight,
-            'bmi': bmi
+            'bmi': bmi,
+            'flag': flag
         }
         return render(request, 'web/result.html', context)
 

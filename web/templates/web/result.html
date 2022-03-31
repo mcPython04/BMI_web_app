@@ -11,6 +11,10 @@
     <p></p>
     Weight: {{weight}}
     <p></p>
-    Result BMI: {{bmi}}
+    Result BMI: {{bmi}}, {{flag}}
+    <p></p>
+    <a href="{% url 'home' %}">
+        <button type="button">Recalculate</button>
+    </a>
 </body>
 </html>
