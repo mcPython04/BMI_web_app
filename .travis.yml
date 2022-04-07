@@ -8,6 +8,7 @@ python: # => 3
 
 install:
   - pip install django
+  - pip install coverage
   - pip install django-nose
 
 script:
