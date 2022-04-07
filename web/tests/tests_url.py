@@ -23,8 +23,15 @@ class TestViews(TestCase):
         req = self.client.get(reverse('home'))
 
         assert req.status_code == 200
+        self.assertContains(req, 'BMI Calculator')\
 
-    def test_home_view_post(self):
-        req = self.client.post(reverse('home'))
+    def test_result_view_post(self):
+        req = self.client.post(reverse('result'), data={
+            'feet': 6,
+            'inches': 6,
+            'weight': 143
+        })
 
-        assert req.status_code == 200
+        self.assertContains(req, 'Result BMI: 16.9, Underweight')
+    
+
