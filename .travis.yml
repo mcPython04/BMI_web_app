@@ -14,5 +14,4 @@ install:
   - pip install webdriver-manager
 
 script:
-  - python manage.py runserver
   - python manage.py test --cover-package=web
