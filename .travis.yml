@@ -11,6 +11,7 @@ install:
   - pip install coverage
   - pip install django-nose
   - pip install selenium
+  - pip install webdriver-manager
 
 script:
   - python manage.py test --cover-package=web
